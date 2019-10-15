@@ -14,47 +14,41 @@ int gotoxy(int x,int y)
 
 int main() {
 	
-	int a,b,c;
-	char ch;
-   a=5;
-   b=6;
-   ch = getch();
-   
-   system("cls");
-    
-   gotoxy(a,b);
-   
-   printf("%c",ch);
-
-
-	while(1){
-		if(kbhit())
-		{
+	int x,y,i,j;
+	printf("Enter the x :");
+	scanf("%d", &x);
+	printf("Enter the :");
+	scanf("%d", &y);
+	
+	
+	system("cls");
+	
+	
+	for(i=1;i<x;i++){//x
+		 gotoxy(i,y-1);
+		 printf(".");
+		for(j=x;j<y;j++){//y
+		    gotoxy(x-1,j);
+			printf(".");
 			
-			c=getch();	
-			if(c==77)
-			a++;
-			
-				if(c==75)
-				a--;
-				
-				if(c==72)
-				b--;
-				
-				if(c==80)
-				b++;
-				
-				if(c==27)
-				break;
-				
-				//system("cls");           //To clear what have been pressed 
-				gotoxy(a,b);
-				printf("%c",ch);
-				
-		}
-		
+		}	
+		 
 	}
+	
+	
+		
+	for(i=1;i<x;i++){//x
+		 gotoxy(x,i);
+		 printf(".");
+		for(j=1;j<y;j++){//y
+		    gotoxy(j,y);
+			printf(".");
+			
+		}	
+		 
+	}
+	
 
-	getch();
-   
+	
+   getch();
 }
