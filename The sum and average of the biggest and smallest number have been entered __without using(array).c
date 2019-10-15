@@ -12,7 +12,7 @@ int main(){
 	printf("Please Enter how many numbers will be: ");
         scanf("%d",&adet);
 	
-	for(i=0;i<adet;i++)             //10 numbers will be entered 
+	for(i=0;i<adet;i++)             
 	{
 		printf("Please enter an integer: ");
         scanf("%d",&n);
