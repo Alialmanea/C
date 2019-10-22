@@ -44,7 +44,7 @@ while(1)
 			
 		if(c==80)
 		b++;
-		
+   //system("cls");             /*Showing just The new movement*/ 
      gotoxy(a,b);
      printf("%c",obj);
 
