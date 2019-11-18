@@ -12,7 +12,7 @@ int main(void) {
         int frequent_numbers[times];
         int i;
 
-        //srand(time(NULL));
+        srand(time(NULL));
 
         for(i=0;i<times;i++){  //create Random numbers
         Random_numbers[i]=(rand()%7)    ;
