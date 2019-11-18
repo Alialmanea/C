@@ -11,7 +11,7 @@ int gotoxy(int x,int y)
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
 }
 
-int gotoxy(int x,int y);
+int gotoxy(int,int);
 
 int main(){
 	
