@@ -12,7 +12,7 @@ return Random_Number;
 
 int Rand_NextIn(int from,int to)
 {
-    return (Random()%((to-from)+1)+from);
+    return (Rand()%((to-from)+1)+from);
 }
 
 int Random(int to)
