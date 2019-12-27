@@ -1,11 +1,3 @@
-//
-//  main.c
-//  Shuffle of given array
-//
-//  Created by dabbaghıe on 12/27/19.
-//  Copyright © 2019 dabbaghıe. All rights reserved.
-//
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -17,7 +9,7 @@ void printArray (int arr[], int n)
         if(i==0)
             printf("[%d,",arr[i]);
         else if(i==n-1)
-            printf("%d]",arr[i]);
+           printf("%d]",arr[i]);
         else
             printf("%d,",arr[i]);
     }
@@ -45,18 +37,16 @@ void Shuffle_array(int arr[],int n){
     }
 }
 
+
 int main(void) {
-    int n=10;
-    int arr[n];
-    for(int i=0;i<n;i++)
-        arr[i]=i;
+    int arr[]={1,2,3,4,5,6,7,8,9,10};
+    int n=(int)sizeof(arr)/sizeof(arr[0]);
+    printf("===The Array befor be Shuffle====\n");
+    printArray(arr,n);
+    printf("===The Array After be Shuffle====\n");
+    Shuffle_array(arr,n);
     
     printArray(arr,n);
-    
-    Shuffle_array(arr,n/2);
-    
-    printArray(arr,n);
-    
     
     
 }
