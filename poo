@@ -1,0 +1,45 @@
+
+#include <math.h>
+#include <conio.h>
+
+
+void drawEllipse(int cx,int cy,int rx,int ry
+                 ,int color){
+    double px,py,pi=3.14;
+    setcolor(12);
+for(int i=1;i<360;i++){
+    px=cx+rx*cos(i*pi/180);
+    py=cy+ry*sin(i*pi/180);
+    putpixel(px,py,color);
+}
+}
+
+
+
+
+void dosomething(int*a,int*b,int*c){
+*a-=++*a* *a;
+*b+=++*b;
+*c*=--*c;
+}
+
+// driver code
+int main()
+{
+    int a=3,b=2,c=5;
+    int pa,pb,pc;
+    pa=&a;pb=&b;pc=&c;
+    dosomething(&a,&b,&c);
+    printf("a=%d  b=%d  c=%d \n",a,b,c);
+    dosomething(pa,pb,pc);
+    printf("a=%d  b=%d  c=%d",a,b,c);
+
+
+
+
+
+
+
+
+    return 0;
+}
