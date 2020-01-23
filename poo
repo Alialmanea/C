@@ -3,19 +3,6 @@
 #include <conio.h>
 
 
-void drawEllipse(int cx,int cy,int rx,int ry
-                 ,int color){
-    double px,py,pi=3.14;
-    setcolor(12);
-for(int i=1;i<360;i++){
-    px=cx+rx*cos(i*pi/180);
-    py=cy+ry*sin(i*pi/180);
-    putpixel(px,py,color);
-}
-}
-
-
-
 
 void dosomething(int*a,int*b,int*c){
 *a-=++*a* *a;
