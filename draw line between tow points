@@ -1,0 +1,96 @@
+//
+//  main.c
+//  Drawing Lines Between Points
+//
+//  Created by dabbaghıe on 25.11.2019.
+//  Copyright © 2019 dabbaghıe. All rights reserved.
+//
+
+#include <stdio.h>
+#include <math.h>
+
+int Abs(int x) {
+    if (x < 0)
+    return -x;
+    else
+    return x;
+}
+
+// function to get the sign (+1 or -1) of an integer
+int Sign(int x) {
+    if (x < 0)
+    return -1;
+    else
+    return 1;
+}
+void drawLine(int xPrev, int yPrev, int x, int y)
+{
+    int x1 = xPrev;
+    int y1 = yPrev;
+    int x2 = x;
+    int y2 = y;
+    int dy = y2 - y1;
+    int dx = x2 - x1;
+    if (Abs(dy) > Abs(dx)) {
+        
+        // since there is a greater change in y than x we must
+    
+        // loop in y, calculate x and draw
+        for (y=y1; y != y2; y += Sign(dy)) {
+            x = x1 + (y - y1) * dx / dy;
+        }
+    }
+    else {
+        // since there is a greater (or equal) change in x than y we must
+
+        // loop in x, calculate y and draw
+        for (x=x1; x != x2; x += Sign(dx)) {
+            y = y1 + (x - x1) * dy / dx;
+        }
+    }
+}
+
+void gotoxy(int x,int y)
+{
+    printf("%c[%d;%df", 0x1b, y, x);
+}
+
+int main ()
+
+{
+    
+    int i,j,k,r=5,x=5,y=6,d,a,l;
+    
+    for(i=0;i<24;i++)
+        
+    {
+        
+        for(j=0;j<25;j++)
+            
+        {
+            
+            a=((i-x)*(i-x))+((j-y)*(j-y));
+            
+            d=sqrt(a);
+            
+            if(r==d)
+                
+            {
+                
+                printf("*");
+                
+            }
+            
+            else
+                
+                printf(" ");
+            
+        }
+        
+        printf("\n");
+        
+    }
+    
+    return 0;
+    
+}
